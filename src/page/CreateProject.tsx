@@ -37,7 +37,7 @@ export default function CreateProject() {
         event.preventDefault();
         // TODO: NEED SIGN UP, LOG-IN (NOW JUST USE USER 1)
         axios.post("http://localhost:8080/api/v1/projects/create"
-            , {name: name, category: {"id": 1}, roles: roles, numPerGroup: numPerTeam, user: {"id": 1}})
+            , {"name": name, "category": {"id": 1}, "roles": roles, "numPerGroup": numPerTeam, "user": {"id": 1}})
             .then((res: any) => {
         });
     }
