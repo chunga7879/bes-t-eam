@@ -29,6 +29,7 @@ function App() {
             <Route path="/survey/project/:projectId" element={<SurveyList />} />
 
             <Route path="/survey/participant/create/survey/:surveyId" element={<SurveyParticipant />}/>
+            <Route path="/answer/create/survey/:surveyId/participant/:participantId" element={<SurveyParticipant />}/>
 
           </Routes>
         </div>

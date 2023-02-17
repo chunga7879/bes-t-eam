@@ -1,12 +1,14 @@
 import React, {useState} from "react";
 import {AddRoleInProject} from "../component/AddRoleInProject";
 import {Input} from "antd";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 
 export default function SurveyParticipant() {
     let params = useParams();
     const surveyId = params.surveyId;
+
+    const navigate = useNavigate();
 
     const [studentNumber, setStudentNumber] = useState(0);
     const [email, setEmail] = useState("");
@@ -18,9 +20,9 @@ export default function SurveyParticipant() {
             "studentNumber": studentNumber,
             "email": email
         }).then((res) => {
-            console.log(res.data)
+            console.log(res.data);
 
-
+            navigate(`/answer/create/survey/${surveyId}/participant/${res.data.id}`);
         })
     }
 
